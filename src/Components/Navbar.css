@@ -1,0 +1,8 @@
+.navbar{
+  background-color: rgb(48, 48, 48);
+  position: fixed;
+  top: 80px;
+  width: 30%;
+  bottom: 50px;
+  right: 0;
+}

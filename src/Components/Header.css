@@ -1,0 +1,18 @@
+.header {
+    height: 80px;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 65px;
+color: #FFFFFF;
+}
+
+.header h5{
+margin: 25px;
+}

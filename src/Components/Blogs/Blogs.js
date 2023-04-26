@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import xml2js from "xml2js";
+import BlogPosts from "./BlogPosts";
 function Blog() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
@@ -18,9 +19,17 @@ function Blog() {
                             .blog
                             .post
                             .map((post) => ({
-                              title: post.title[0],
-                              author: post.author[0], 
-                              date: post.date[0]}));
+                              id: post.id[0],
+                                summary: post
+                                    .summary[0]
+                                    .text,
+                                img: post
+                                    .summary[0]
+                                    .image_path,
+                                title: post.title[0],
+                                author: post.author[0],
+                                date: post.date[0]
+                            }));
                         setPosts(post);
                     }
                 });
@@ -30,14 +39,25 @@ function Blog() {
             });
     }, []);
     return (
-        <div>
-            <h1>Blog Posts</h1>
+        <main>
+          
+    <h1>Blog Posts</h1>
             <ol>
                 {
-                    posts.map((post) => (<li>{post.author+post.date}</li>))
+                    posts.map((post) => (
+                        <BlogPosts
+                        id={post.id}
+                            title={post.title}
+                            author={post.author}
+                            link={post.link}
+                            content={post.content}
+                            summary={post.summary}
+                            img={post.img}
+                            date={post.date}/>
+                    ))
                 }
             </ol>
-        </div>
+        </main>
     );
 }
 export default

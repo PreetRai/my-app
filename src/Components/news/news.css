@@ -1,0 +1,32 @@
+.news {
+color: whitesmoke;
+padding: 5px;
+}
+.news-block{
+  margin: 10px;
+display: flex;
+flex-direction: row;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  color: black
+}
+.news-block h1{
+  padding: 10px;
+  font-size: small;
+  width: 80%;
+}
+.news-block a{
+  padding: 10px;
+  font-size: small;
+  color: black;
+  padding: 0%;
+  margin: 0%;
+}
+
+.scrollable-div{
+  justify-content: center;
+  position: fixed;
+  bottom: 60px;
+  height: 600px;
+  overflow: auto;
+}
