@@ -14,7 +14,7 @@ function App() {
             <Navbar/>
             <BrowserRouter>
                 <Switch>
-                    <Route path="/home">
+                    <Route path="/">
                         <Blogs/>
                     </Route>
                     <Route path="/post">
@@ -26,7 +26,6 @@ function App() {
                     <Route path="/tweets">
                         <TwitterFeed/>
                     </Route>
-                    <Route path="/postdetails/:id" component={Post} />
                 </Switch>
             </BrowserRouter>
             <Footer/>
