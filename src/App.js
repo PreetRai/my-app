@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
@@ -22,6 +22,7 @@ function App() {
                     <Route path="/news">
                         <GoogleNews/>
                     </Route>
+                    <Redirect to="/home"/>
                 </Switch>
             </BrowserRouter>
             <Footer/>
