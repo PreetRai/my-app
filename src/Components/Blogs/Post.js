@@ -1,6 +1,6 @@
 
 import React from 'react';
-function BlogPosts(props) {
+function Blogdetails() {
     return (<div class="blog-post">
     <h2 class="post-title">Title</h2>
     <img src="image.jpg" alt="Image description"/>
@@ -11,4 +11,4 @@ function BlogPosts(props) {
     );
 }
 
-export default BlogPosts;
+export default Blogdetails;
