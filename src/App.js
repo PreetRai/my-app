@@ -3,9 +3,9 @@ import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
-import Blogs from './Components/Blogs/Blogs';
 import Post from './Components/Blogs/Post';
 import GoogleNews from './Components/news/news';
+import BlogListParser from './Components/Blogs/parser';
 function App() {
     return (
         <div>
@@ -14,7 +14,7 @@ function App() {
             <BrowserRouter>
                 <Switch>
                     <Route path="/home">
-                        <Blogs/>
+                        <BlogListParser/>
                     </Route>
                     <Route path="/post">
                         <Post/>

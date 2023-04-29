@@ -1,63 +1,58 @@
-import React, {useState, useEffect} from "react";
-import xml2js from "xml2js";
+import React, { useState, useEffect } from "react";
 import BlogPosts from "./BlogPosts";
+import $ from "jquery";
+
 function BlogListParser() {
-    const [posts, setPosts] = useState([]);
-    useEffect(() => {
-        // fetch the XML data from the server
-        fetch("/posts.xml")
-            .then((response) => response.text())
-            .then((xml) => {
-                //       parse the XML data into a JavaScript object
-                xml2js.parseString(xml, (err, result) => {
-                    if (err) {
-                        console.error(err);
-                    } else {
-                        //             extract the post titles           from the JavaScript object
-                        console.log('Your xml file as string', result);
-                        const post = result
-                            .blog
-                            .post
-                            .map((post) => ({
-                              id: post.id[0],
-                                summary: post
-                                    .summary[0]
-                                    .text,
-                                img: post
-                                    .summary[0]
-                                    .image_path,
-                                title: post.title[0],
-                                author: post.author[0],
-                                date: post.date[0]
-                            }));
-                        setPosts(post);
-                    }
-                });
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    }, []);
-    return (
-        <main>
-          
-    <h1>Blog Posts</h1>
-            <ol>
-                {
-                    posts.map((post) => (
-                        <BlogPosts
-                        id={post.id}
-                            title={post.title}
-                            author={post.author}
-                            link={post.link}
-                            content={post.content}
-                            summary={post.summary}
-                            img={post.img}
-                            date={post.date}/>
-                    ))
-                }
-            </ol>
-        </main>
-    );
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    // fetch the XML data from the server using AJAX
+    $.ajax({
+      url: "/posts.xml",
+      dataType: "xml",
+      success: (xml) => {
+        // parse the XML data into a JavaScript object
+        const posts = $(xml)
+          .find("post")
+          .map(function () {
+            return {
+              id: $(this).find("id").text(),
+              summary: $(this).find("summary text").text(),
+              img: $(this).find("summary image_path").text(),
+              title: $(this).find("title").text(),
+              author: $(this).find("author").text(),
+              date: $(this).find("date").text(),
+            };
+          })
+          .get();
+        setPosts(posts);
+      },
+      error: (xhr, status, error) => {
+        console.error(error);
+      },
+    });
+  }, []);
+
+  return (
+    <main>
+      <h1>Blog Posts</h1>
+      <ol>
+        {posts.map((post) => (
+          <BlogPosts
+            key={post.id}
+            id={post.id}
+            title={post.title}
+            author={post.author}
+            link={post.link}
+            content={post.content}
+            summary={post.summary}
+            img={post.img}
+            date={post.date}
+          />
+        ))}
+      </ol>
+    </main>
+  );
 }
+
 export default BlogListParser;
