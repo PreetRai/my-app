@@ -7,7 +7,7 @@ function BlogPosts(props) {
                 <img src={props.img} alt="blog post summary"/>
                 <div className="Blog-post-details">
                     <div className='Blog-post-title'>
-                        <a href={"/post"}>
+                    <a href={`/post/${props.id}`}>
                             <h1>{props.id}. {props.title} <small>
                                     @ {
                                         props.author

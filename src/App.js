@@ -16,7 +16,7 @@ function App() {
                     <Route path="/home">
                         <BlogListParser/>
                     </Route>
-                    <Route path="/post">
+                    <Route path="/post/:id">
                         <Blogdetails/>
                     </Route>
                     <Route path="/news">
