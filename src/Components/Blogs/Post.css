@@ -1,7 +1,8 @@
 .Single-blog {
-    width: 70%;
+    width: 65%;
     overflow-y: scroll;
     height: 600px;
+    padding: 10px;
   }
   
   /* Hide the scrollbar */
