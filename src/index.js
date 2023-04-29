@@ -6,6 +6,7 @@ import './Components/Footer.css';
 import './Components/Header.css';
 import'./Components/Blogs/BlogPost.css'
 import './Components/news/news.css'
+import './Components/Blogs/Post.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

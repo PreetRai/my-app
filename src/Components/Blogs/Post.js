@@ -5,12 +5,10 @@ function BlogDetails() {
   const [post, setPost] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    // fetch the XML data from the server using AJAX
     $.ajax({
-      url: "/posts.xml?id="+{id}, // <-- add the id parameter
+      url: "/posts.xml",
       dataType: "xml",
       success: (xml) => {
-        // parse the XML data into a JavaScript object
         const post = $(xml)
           .find("post")
           .map(function () {
@@ -19,6 +17,7 @@ function BlogDetails() {
               summary: $(this).find("summary text").text(),
               img: $(this).find("summary image_path").text(),
               title: $(this).find("title").text(),
+              body: $(this).find("body").text(),
               author: $(this).find("author").text(),
               date: $(this).find("date").text(),
             };
@@ -34,12 +33,12 @@ function BlogDetails() {
   
 
   return (
-    <div className="blog-post">
-      <h2 className="post-title">{post.title}</h2>
-      <img src={post.img} alt="Image description" />
-      <p className="post-description">{post.description}</p>
-      <p className="post-summary">{post.summary}</p>
-      <p className="post-date">{post.date}</p>
+    <div className="Single-blog">
+      <h2 className="spost-title">{post.title}</h2>
+      <img className="simg"src={post.img} alt="Image description" />
+      <p className="spost-description">{post.body}</p>
+      <p className="spost-summary">{post.summary}</p>
+      <p className="spost-date">{post.date}</p>
     </div>
   );
 }
