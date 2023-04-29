@@ -13,7 +13,7 @@ function App() {
             <Navbar/>
             <BrowserRouter>
                 <Switch>
-                    <Route path="/">
+                    <Route path="/home">
                         <Blogs/>
                     </Route>
                     <Route path="/post">
