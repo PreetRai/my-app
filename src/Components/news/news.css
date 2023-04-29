@@ -1,32 +1,31 @@
-.news {
-color: whitesmoke;
-padding: 5px;
-}
-.news-block{
-  margin: 10px;
-display: flex;
-flex-direction: row;
-  border-radius: 15px;
-  background-color: whitesmoke;
-  color: black
-}
-.news-block h1{
-  padding: 10px;
-  font-size: small;
-  width: 80%;
-}
-.news-block a{
-  padding: 10px;
-  font-size: small;
+
+.article {
   color: black;
-  padding: 0%;
-  margin: 0%;
+  margin-bottom: 20px;
 }
 
-.scrollable-div{
-  justify-content: center;
-  position: fixed;
-  bottom: 60px;
-  height: 600px;
-  overflow: auto;
+.article h3 {
+  color: black;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.article p {
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.read-more:hover {
+  background-color: #777;
+}
+.scroll{
+  overflow-y: scroll;
 }

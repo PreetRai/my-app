@@ -7,6 +7,8 @@ function Navbar() {
         <a href="/home" className='navbtn'>
             <i>
                 <AiOutlineHome/ ></i>Home</a>
+                <News/>
+                <div id="tweet-container"></div>
         </nav>
         );
 }

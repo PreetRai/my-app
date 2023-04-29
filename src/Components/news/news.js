@@ -3,12 +3,13 @@ import axios from "axios";
 
 const News = () => {
   const [articles, setArticles] = useState([]);
+
   const fetchArticles = async () => {
     const response = await axios.get(
-      "https://newsapi.org/v2/everything?q=tesla&from=2023-03-25&sortBy=publishedAt&apiKey=7ead039bc8d14cc3a6dba531223bb86a"
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=4526afe472904f1abe8d089ae36a331d"
     );
     setArticles(response.data.articles);
-    };
+  };
 
   useEffect(() => {
     fetchArticles();
@@ -18,18 +19,20 @@ const News = () => {
     return () => clearInterval(interval);
   }, []);
 
-
   return (
     <div className="news">
-      <h1>News Headlines</h1>
-      <div className="scrollable-div">
-      {articles.map((article) => (
-        <div className=" news-block " key={article.url}>
-          <h1>{article.title}</h1>
-          <p>{article.description}</p>
-          <a href={article.url}>Read more </a>
-        </div>
-      ))}</div> 
+      <h2>News Headlines</h2>
+      <div className="scroll" style={{ overflowY: "scroll", height: "400px" }}>
+        {articles.map((article) => (
+          <div className="article" key={article.url}>
+            <h3>{article.title}</h3>
+            <p>{article.description}</p>
+            <a href={article.url} className="read-more">
+              Read More
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

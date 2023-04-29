@@ -6,7 +6,6 @@ import Header from './Components/Header';
 import Blogs from './Components/Blogs/Blogs';
 import Post from './Components/Blogs/Post';
 import GoogleNews from './Components/news/news';
-import TwitterFeed from './Components/tweeter/tweeter';
 function App() {
     return (
         <div>
@@ -22,9 +21,6 @@ function App() {
                     </Route>
                     <Route path="/news">
                         <GoogleNews/>
-                    </Route>
-                    <Route path="/tweets">
-                        <TwitterFeed/>
                     </Route>
                 </Switch>
             </BrowserRouter>

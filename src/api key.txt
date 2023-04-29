@@ -1,4 +1,1 @@
-News: 7ead039bc8d14cc3a6dba531223bb86a
-tweeter Bearer: AAAAAAAAAAAAAAAAAAAAAHF6mwEAAAAAoEvKFmmfiYrVupqXiqA41WFn74E%3D1A1R8WAxNWY65IFoUgi854UUwCsthung2Kcz7sQYu6xgleVMmy
-tweeter api key: japcC9JzQ0jDHTCdXBDHKXNi7
-tweeter secret key: vcsdOGWSw3KHiHQ3xHZ4WeXKX2DV4HMKgSnyZtrdYiaaUut3qf
+News:4526afe472904f1abe8d089ae36a331d

@@ -20,3 +20,52 @@
 .navbtn:hover {
   background-color: #777;
 }
+.news {
+  flex: 1;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.news h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.news ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news li { 
+  color: black;
+  margin-bottom: 10px;
+  font-size: 16px;
+}.article {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.article h3 {
+  color: black;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.article p {
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #555;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.read-more:hover {
+  background-color: #777;
+}
